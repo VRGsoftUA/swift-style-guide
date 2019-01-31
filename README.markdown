@@ -39,10 +39,10 @@ Do not place opening braces on new lines. Move one line after class declaration.
 ```swift
 class SomeClass: BaseClass {
 
-	if condition {
+  if condition {
     
-		//do something
-	}
+    //do something
+  }
 }
 ```
 
@@ -50,10 +50,10 @@ class SomeClass: BaseClass {
 ```swift
 class SomeClass : BaseClass
 {
-	if condition 
-	{
-		//do something
-	}
+  if condition 
+  {
+    //do something
+  }
 }
 ```
 We follow Xcode's recommended indentation style. When calling the function that has many parameters, put each argument on a separate line with a single extra indentation.
@@ -68,10 +68,11 @@ let params: [String: String] = [
 	"key3": "value3",
 ]
 
-func functionWithManyParams(param1: Int,
-							  param2: Int,
-							  param3: Int) {
-	//code
+func functionWithManyParams(
+	param1: Int,
+	param2: Int,
+	param3: Int) {
+//code
 }
 ```
 
@@ -84,7 +85,7 @@ Always indicate the type when declaring a variable. This speeds the project buil
 ```swift
 class SomeClass {
 	
-	let someText: String = "Text"
+  let someText: String = "Text"
 }
 ```
 
@@ -92,7 +93,7 @@ class SomeClass {
 ```swift
 class SomeClass {
 
-	let someText = "Text"
+  let someText = "Text"
 }
 ```
 
@@ -158,20 +159,20 @@ Use marks to organize your code into logical blocks of functionality. Class shou
 ```swift
 class ViewController: UIViewController {
 
-	// MARK: deinit
+  // MARK: deinit
     
-	// MARK: init
+  // MARK: init
 	
-	// MARK: View controller lifecycle methods
+  // MARK: View controller lifecycle methods
 	
-	// MARK: Base overrides
+  // MARK: Base overrides
 	
-	// MARK: Logic
+  // MARK: Logic
 	
-	// MARK: Actions
+  // MARK: Actions
 	
-	/* delegate and protocols methods */
-	// MARK: UITableViewControllerDelegate
+  /* delegate and protocols methods */
+  // MARK: UITableViewControllerDelegate
 }
 ```
 
@@ -198,9 +199,9 @@ In methods with a return parameter, should be created a variable `result` which 
 ```swift
 func createTableViewFooter() -> UIView {
 
-	let result: MyTableViewFooter = MyTableViewFooter.loadFromNib()
+  let result: MyTableViewFooter = MyTableViewFooter.loadFromNib()
 
-	return result
+  return result
 }
 ```
 
@@ -208,7 +209,7 @@ func createTableViewFooter() -> UIView {
 ```swift
 func createTableViewFooter() -> UIView {
 
-	return MyTableViewFooter.loadFromNib()
+  return MyTableViewFooter.loadFromNib()
 }
 ```
 
@@ -220,12 +221,12 @@ Do not add a separate extension for the protocol methods. Do it only for `final`
 ```swift
 class ViewController: UIViewController, UITableViewDataSource {
 
-	// class stuff here
+  // class stuff here
 
 
-	// MARK: - UITableViewDataSource
+  // MARK: - UITableViewDataSource
     
-	// table view data source methods
+  // table view data source methods
 }
 ```
 **or**:
@@ -233,12 +234,12 @@ class ViewController: UIViewController, UITableViewDataSource {
 ```swift
 final class ViewController: UIViewController {
 
-	// class stuff here
+  // class stuff here
 }
 
 extension ViewController: UITableViewDataSource {
 
-	// table view data source methods
+  // table view data source methods
 }
 ```
 
@@ -246,12 +247,12 @@ extension ViewController: UITableViewDataSource {
 ```swift
 class ViewController: UIViewController {
 
-	// class stuff here
+  // class stuff here
 }
 
 extension ViewController: UITableViewDataSource {
 
-	// table view data source methods
+  // table view data source methods
 }
 ```
 
@@ -263,7 +264,7 @@ Unused (dead) code, including Xcode template code and placeholder comments shoul
 ```swift
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-	return count
+  return count
 }
 ```
 
@@ -271,21 +272,21 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 ```swift
 override func didReceiveMemoryWarning() {
 
-	super.didReceiveMemoryWarning()
+  super.didReceiveMemoryWarning()
     
-	// Dispose of any resources that can be recreated.
+  // Dispose of any resources that can be recreated.
 }
 
 override func numberOfSections(in tableView: UITableView) -> Int {
     
-	// #warning Incomplete implementation, return the number of sections
-	return 1
+  // #warning Incomplete implementation, return the number of sections
+  return 1
 }
 
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-	// #warning Incomplete implementation, return the number of rows
-	return count
+  // #warning Incomplete implementation, return the number of rows
+  return count
 }
 ```
 
@@ -306,16 +307,16 @@ For read-only property omit the get clause. The get clause is required only when
 ```swift
 var diameter: Double {
 
-	return radius * 2
+  return radius * 2
 }
 ```
 
 **Not Preferred**:
 ```swift
 var diameter: Double {
-	get {
-		return radius * 2
-	}
+  get {
+    return radius * 2
+  }
 }
 ```
 
@@ -331,7 +332,7 @@ Don't use `(Void)` to represent the lack of input and function outputs simply us
 ```swift
 func updateConstraints() {
 
-	// some code
+  // some code
 }
 
 typealias CompletionHandler = (result) -> Void
@@ -342,7 +343,7 @@ typealias CompletionHandler = (result) -> Void
 ```swift
 func updateConstraints() -> Void {
 
-	// some code
+  // some code
 }
 
 typealias CompletionHandler = (result) -> ()
@@ -357,15 +358,15 @@ Use trailing closure syntax only if there's a single closure expression paramete
 ```swift
 UIView.animate(withDuration: 1.0) {
 
-	self.myView.alpha = 0
+  self.myView.alpha = 0
 }
 
 UIView.animate(withDuration: 1.0, animations: {
 
-	self.myView.alpha = 0
+  self.myView.alpha = 0
 }, completion: { finished in
 
-	self.myView.removeFromSuperview()
+  self.myView.removeFromSuperview()
 })
 ```
 
@@ -373,14 +374,14 @@ UIView.animate(withDuration: 1.0, animations: {
 ```swift
 UIView.animate(withDuration: 1.0, animations: {
 
-	self.myView.alpha = 0
+  self.myView.alpha = 0
 })
 
 UIView.animate(withDuration: 1.0, animations: {
 
-	self.myView.alpha = 0
+  self.myView.alpha = 0
 }) { f in
-	self.myView.removeFromSuperview()
+  self.myView.removeFromSuperview()
 }
 ```
 
@@ -433,17 +434,17 @@ var volume: Double?
 // later on...
 if let subview = subview, let volume = volume {
 
-	// do something with unwrapped subview and volume
+  // do something with unwrapped subview and volume
 }
 
 // another example
 UIView.animate(withDuration: 2.0) { [weak self] in
 
-	guard let self = self else { 
-		return
-	}
+  guard let self = self else { 
+    return
+  }
     
-	self.alpha = 1.0
+  self.alpha = 1.0
 }
 ```
 
@@ -454,17 +455,17 @@ var volume: Double?
 
 if let unwrappedSubview = optionalSubview {
 
-	if let realVolume = volume {
+  if let realVolume = volume {
   
-		// do something with unwrappedSubview and realVolume
-	}
+    // do something with unwrappedSubview and realVolume
+  }
 }
 
 // another example
 UIView.animate(withDuration: 2.0) { [weak self] in
     
-	guard let strongSelf = self else { return }
-	strongSelf.alpha = 1.0
+  guard let strongSelf = self else { return }
+  strongSelf.alpha = 1.0
 }
 ```
 In conditions, the optional bool variable should be checked as follows:
@@ -473,7 +474,7 @@ In conditions, the optional bool variable should be checked as follows:
 ```swift
 if validatableObject?.validatableText?.isEmpty == true {
 
-	//text is empty
+  //text is empty
 } 
 ```
 
@@ -481,7 +482,7 @@ if validatableObject?.validatableText?.isEmpty == true {
 ```swift
 if validatableObject?.validatableText?.isEmpty ?? true {
 
-	//text is empty
+  //text is empty
 }
 ```
 
@@ -494,8 +495,7 @@ Only explicitly use `open`, `public`, and `internal` when you require full acces
 
 Use access control as the leading property specifier. The only things that should come before access control are the `static` specifier or attributes such as `@IBAction`, `@IBOutlet` and `@discardableResult`.
 
-Static `String` variables that are used for `NSNotification.Name` or
-`UserDefaults` keys should not be `private` or `fileprivate`, as in the case of limited access control there is a possibility of duplication in another places
+Static `String` variables that are used for `NSNotification.Name` or `UserDefaults` keys should not be `private` or `fileprivate`, as in the case of limited access control there is a possibility of duplication in another places.
 
 
 ## Control flow
@@ -531,7 +531,7 @@ Always start `guard` body on new line.
 ```swift
 guard let value = value else {
 
-	return
+  return
 }
 ```
 
@@ -546,7 +546,7 @@ Compound version when possible. In the compound version, place the `guard` on it
 ```swift
 guard let value1 = value1, let value2 = value2, let value3 = value3 else {
     
-	return
+  return
 }
 
 // do something
@@ -556,24 +556,24 @@ guard let value1 = value1, let value2 = value2, let value3 = value3 else {
 ```swift
 if let value1 = value1, let value2 = value2, let value3 = value3 {
 
-	// do something
+  // do something
 }
 ```
 
 **Not Preferred**:
 ```swift
 if let value1 = value1 {
-	if let value2 = value2 {
-		if let value3 = value3 {
-			// do something
-		} else {
-			return
-		}
-	} else {
-		return
-	}
+  if let value2 = value2 {
+    if let value3 = value3 {
+      // do something
+    } else {
+      return
+    }
+  } else {
+    return
+  }
 } else {
-	return
+  return
 }
 ```
 Guard statements are required to exit in some way. Generally, this should be simple one line statement such as `return`, `throw`, `break`, `continue`, and `fatalError()`. Large code blocks should be avoided.
@@ -604,7 +604,7 @@ Parentheses around conditionals are not required and should be omitted.
 ```swift
 if name == "Hello" {
 
-	print("World")
+  print("World")
 }
 ```
 
@@ -612,7 +612,7 @@ if name == "Hello" {
 ```swift
 if (name == "Hello") {
 
-	print("World")
+  print("World")
 }
 ```
 
