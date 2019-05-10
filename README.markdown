@@ -159,20 +159,20 @@ Use marks to organize your code into logical blocks of functionality. Class shou
 ```swift
 class ViewController: UIViewController {
 
-  // MARK: deinit
+  // MARK: - deinit
     
-  // MARK: init
+  // MARK: - init
 	
-  // MARK: View controller lifecycle methods
+  // MARK: - View controller lifecycle methods
 	
-  // MARK: Base overrides
+  // MARK: - Base overrides
 	
-  // MARK: Logic
+  // MARK: - Logic
 	
-  // MARK: Actions
+  // MARK: - Actions
 	
   /* delegate and protocols methods */
-  // MARK: UITableViewControllerDelegate
+  // MARK: - UITableViewControllerDelegate
 }
 ```
 
