@@ -626,7 +626,7 @@ When building a long string literal, you're encouraged to use the multi-line str
 **Preferred**:
 
 ```swift
-let message = """
+let message: String = """
   You cannot charge the flux \
   capacitor with a 9V battery.
   You must use a super-charger \
@@ -638,7 +638,7 @@ let message = """
 **Not Preferred**:
 
 ```swift
-let message = """You cannot charge the flux \
+let message: String = """You cannot charge the flux \
   capacitor with a 9V battery.
   You must use a super-charger \
   which costs 10 credits. You currently \
@@ -649,7 +649,7 @@ let message = """You cannot charge the flux \
 **Not Preferred**:
 
 ```swift
-let message = "You cannot charge the flux " +
+let message: String = "You cannot charge the flux " +
   "capacitor with a 9V battery.\n" +
   "You must use a super-charger " +
   "which costs 10 credits. You currently " +
